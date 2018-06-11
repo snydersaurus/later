@@ -40,7 +40,7 @@ later.schedule = function(sched) {
   function getInstances(dir, count, startDate, endDate, isRange) {
     var compare = compareFn(dir), // encapsulates difference between directions
         loopCount = count,
-        maxAttempts = count,
+        maxAttempts = 100000,
         schedStarts = [], exceptStarts = [],
         next, end, results = [],
         isForward = dir === 'next',

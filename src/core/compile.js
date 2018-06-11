@@ -63,7 +63,7 @@ later.compile = function(schedDef) {
     start: function(dir, startDate) {
       var next = startDate,
           nextVal = later.array[dir],
-          maxAttempts = 1000,
+          maxAttempts = 100000,
           done;
 
       while(maxAttempts-- && !done && next) {

@@ -580,7 +580,7 @@ later = function() {
     }
     return {
       start: function(dir, startDate) {
-        var next = startDate, nextVal = later.array[dir], maxAttempts = 1e3, done;
+        var next = startDate, nextVal = later.array[dir], maxAttempts = 1e6, done;
         while (maxAttempts-- && !done && next) {
           done = true;
           for (var i = 0; i < constraintsLen; i++) {
@@ -629,7 +629,7 @@ later = function() {
       exceptions.push(later.compile(sched.exceptions[j]));
     }
     function getInstances(dir, count, startDate, endDate, isRange) {
-      var compare = compareFn(dir), loopCount = count, maxAttempts = 1e3, schedStarts = [], exceptStarts = [], next, end, results = [], isForward = dir === "next", lastResult, rStart = isForward ? 0 : 1, rEnd = isForward ? 1 : 0;
+      var compare = compareFn(dir), loopCount = count, maxAttempts = 1e6, schedStarts = [], exceptStarts = [], next, end, results = [], isForward = dir === "next", lastResult, rStart = isForward ? 0 : 1, rEnd = isForward ? 1 : 0;
       startDate = startDate ? new Date(startDate) : new Date();
       if (!startDate || !startDate.getTime()) throw new Error("Invalid start date.");
       setNextStarts(dir, schedules, schedStarts, startDate);
